@@ -1,0 +1,20 @@
+Download the latest stable release called motioneyeos-[board]-yyyymmdd.img.gz, where [board] is the name of your board
+
+extract the image file from the archive
+
+write the image file to your SD card:
+
+If you use Windows, just follow these instructions.
+
+
+First Boot
+When booting a fresh image installation, a few initialization steps will take place and therefore the system won't be ready for about 1-2 minutes. Please do not disconnect or reboot your board during these first two minutes!. These steps are:
+
+preparing the data partition on the SD card
+configuring SSH remote access
+auto-configuring any detected camera devices
+motionEyeOS needs an IP address before you can communicate with it so you'll have to use the ethernet connection with DHCP enabled, unless you have preconfigured a static IP address.
+
+As soon as your motionEyeOS is ready it will listen on port 80 and present you a web user interface. To access it, enter the IP address of your board in the address bar of your browser. To find the address, connect to your router (most routers can display the addresses of all connected devices) and look for a device name beginning with "meye-". Alternatively, you can use a network scanner such as the free mobile app Fing.
+
+Click on the user icon on the upper-left side of the page to switch user to administrator. Use admin with no password when asked for credentials. Feel free to explore all the available configuration options.
