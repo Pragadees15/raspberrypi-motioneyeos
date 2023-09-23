@@ -1,3 +1,6 @@
+motionEyeOS is a Linux distribution that turns a single-board computer into a video surveillance system. 
+The OS is based on BuildRoot and uses motion as a backend and motionEye for the frontend.
+
 Installing a camera firmware in raspberry pi 4 using motioneyeos:
 MotionEyeOS:
 https://github.com/motioneye-project/motioneyeos/releases/download/20200606/motioneyeos-raspberrypi-20200606.img.xz
