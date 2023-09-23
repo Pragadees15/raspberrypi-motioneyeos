@@ -33,6 +33,5 @@ The software components required for this project include:
 
 Raspbian OS (or any Raspberry Pi compatible OS)
 MotionEyeOS (open-source motion detection software)
-Python (for scripting and customizations)
-Mobile app or email client for receiving alerts
+
 
