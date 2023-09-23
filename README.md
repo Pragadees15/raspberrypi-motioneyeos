@@ -1,6 +1,6 @@
 # raspberrypi-motioneyeos
 Smart Security Camera Using Raspberry Pi and Webcam with MotionEyeOS
-Project Image <!-- You can add a project image if available -->
+
 
 Overview
 
@@ -31,7 +31,7 @@ Software Requirements
 
 The software components required for this project include:
 
-Raspbian OS (or any Raspberry Pi compatible OS)
+Raspbian OS Imager
 MotionEyeOS (open-source motion detection software)
 
 
