@@ -18,3 +18,46 @@ motionEyeOS needs an IP address before you can communicate with it so you'll hav
 As soon as your motionEyeOS is ready it will listen on port 80 and present you a web user interface. To access it, enter the IP address of your board in the address bar of your browser. To find the address, connect to your router (most routers can display the addresses of all connected devices) and look for a device name beginning with "meye-". Alternatively, you can use a network scanner such as the free mobile app Fing.
 
 Click on the user icon on the upper-left side of the page to switch user to administrator. Use admin with no password when asked for credentials. Feel free to explore all the available configuration options.
+
+From Windows:
+Things you will need first:
+
+Win32DiskImager
+The latest motioneyeos image
+Notepad++
+
+Download the latest motioneyeos image.
+Extract the image to your hard drive (using Winzip, 7Zip, etc.)
+Write the image to your microSD card using Win32DiskImager.
+DO NOT EJECT THE SD CARD yet.
+Open Windows Explorer and browse to your drive containing the microSD card. You should see files such as:
+bootcode.bin
+loader.bin
+start.elf
+kernel.img
+cmdline.txt
+Right-click in the right window pane and select New Text Document.
+Now, right click on this file and rename it wpa_supplicant.conf. Make sure to remove the .txt file extension.
+Once again, right click on this file and select Edit with Notepad++.
+Make sure you set the EOL conversion to UNIX LineFeeds (Edit-->EOL Conversion-->Unix LF).
+Paste the following contents into your blank file (obviously changing the ssid and psk to match yours):
+        country=US
+        update_config=1
+        ctrl_interface=/var/run/wpa_supplicant
+        
+        network={
+            scan_ssid=1
+            ssid="MyWiFiSSID"
+            psk="S3cr3tp@$$w0rc|"
+        }
+Change the country code to the country in which this device is currently operating. You can get the list of country codes here.
+Save the file.
+Eject your microSD card safely.
+Insert this microSD card into your device, e.g. Pi 4
+Optionally, attach a camera to your device.
+Apply power to your device.
+If you have a monitor attached to the device, you should see the wireless network service starting, wpa_supplicant being read and 'brcmfmac Done'.
+Shortly, you should see your IP address being displayed along with your gateway and DNS servers.
+Using your favorite browser, browse to the IP address that was displayed and log in to the device using the default motioneyeos credentials of: admin / [blank password]
+You can shut down the motioneye os remotely by select the advanced settings-->shutdown
+Note: If you do not have a display attached to your zero, you can use nmap to scan your home network for any new devices / ip's. Look for one labeled "(Raspberry Pi Foundation)"
